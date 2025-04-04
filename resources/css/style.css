@@ -1,0 +1,48 @@
+/* Root */
+:root {
+    --color-primary: #DC143C;
+    --color-primary-darker: #292121;
+    --color-primary-lighter: #00be99;
+    
+    --color-secondary: #E74C3C;
+    --color-secondary-darker: #cc8800;
+    --color-secondary-lighter: #ffbb32;
+
+    --color-danger: #E13D34;
+    --color-default: #F5F5F5;
+    --color-gray-light: #a0aec0;
+    --color-gray-darker: #999;
+    
+    --color-text-default: #494949;
+    --color-main-background: #f8f8f8;
+    
+    /* color alert */
+    --color-error: #f56c6c;
+    --color-light-error: #fef0f0;
+
+    --color-success: #67c23a;
+    --color-light-success: #f0f9eb;
+
+    --color-warning: #e6a23c;
+    --color-light-warning: #fdf6ec;
+
+    --color-info: #909399;
+    --color-light-info: #f4f4f5;
+}
+
+body {
+    font-family: Arial, Calibri, sans-serif;
+    font-size: 15px;
+    color: #333;
+    background-color: #f8f8f8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+div.topical a {
+    color: #0000FF;
+}
+div.topical a:hover {
+    text-decoration: underline;
+}

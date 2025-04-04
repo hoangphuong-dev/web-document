@@ -1,0 +1,55 @@
+apps:
+  - name: schedule
+    script: ./artisan
+    exec_mode: fork
+    interpreter: /usr/bin/php
+    instances: 1
+    autorestart: true
+    log_date_format: MM.DD.HH.mm
+    args:
+      - schedule:work
+      
+  - name: system
+    script: ./artisan
+    exec_mode: fork
+    interpreter: /usr/bin/php
+    instances: 1
+    autorestart: true
+    restart_delay: 1800000 # 30 phút
+    log_date_format: MM.DD.HH.mm
+    args:
+      - queue:work
+      - --queue=system
+      - --timeout=3600
+      - --sleep=3
+      - --tries=3
+      
+  - name: default
+    script: ./artisan
+    exec_mode: fork
+    interpreter: /usr/bin/php
+    instances: 1
+    autorestart: true
+    restart_delay: 1800000 # 30 phút
+    log_date_format: MM.DD.HH.mm
+    args:
+      - queue:work
+      - --timeout=3600
+      
+  - name: reverb
+    script: ./artisan
+    exec_mode: fork
+    interpreter: /usr/bin/php
+    instances: 1
+    autorestart: true
+    restart_delay: 10000
+    log_date_format: YYYY-MM-DD HH:mm:ss
+    max_memory_restart: 256M
+    args:
+      - reverb:start
+      - --host=0.0.0.0
+      - --port=8083
+    env:
+      NODE_ENV: production
+    error_file: /var/log/pm2/reverb-error.log
+    out_file: /var/log/pm2/reverb-out.log

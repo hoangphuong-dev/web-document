@@ -1,0 +1,7 @@
+#download, #openFile, #print, #viewBookmark, #presentationMode {
+    display: none !important;
+}
+
+#secondaryOpenFile, #secondaryPrint, #secondaryDownload, #toggleHandTool, #documentProperties, .horizontalToolbarSeparator, #secondaryViewBookmark, #secondaryPresentationMode, .verticalToolbarSeparator, #secondaryToolbarToggle {
+    display: none !important;
+}

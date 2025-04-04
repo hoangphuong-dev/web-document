@@ -1,0 +1,15 @@
+User-agent: *
+
+Disallow: /payment
+Disallow: /tmp-payment
+Disallow: /thanh-toan
+Disallow: /email/*
+Disallow: /auth/social/*
+Disallow: /reset-password/*
+Disallow: /forgot-password/*
+Disallow: /search
+Disallow: /livewire/*
+Disallow: /_debugbar/*
+
+Sitemap: https://khosangkien.com/sitemaps.xml
+Sitemap: https://khosangkien.com/sitemaps/documents.xml
